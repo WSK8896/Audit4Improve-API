@@ -1,0 +1,24 @@
+name: Flujo WSK8896 - Issues y Proyecto
+
+on:
+  issues:
+    types: [opened]
+  project_card:
+    types: [moved]
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar evento recibido
+        run: |
+          echo "🔔 Evento: ${{ github.event_name }}"
+          echo "📌 Repositorio: ${{ github.repository }}"
+          echo "🧑 Usuario: ${{ github.actor }}"
+          echo "📄 Issue/Proyecto: ${{ toJSON(github.event) }}"
+
+      - name: Acción divertida: generar ascii-art
+        uses: muesli/asciify-action@v1
+        with:
+          text: "¡Hola WSK8896!"
