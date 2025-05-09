@@ -16,9 +16,15 @@ jobs:
           echo "🔔 Evento: ${{ github.event_name }}"
           echo "📌 Repositorio: ${{ github.repository }}"
           echo "🧑 Usuario: ${{ github.actor }}"
-          echo "📄 Issue/Proyecto: ${{ toJSON(github.event) }}"
+          echo "📄 Detalle del evento:"
+          echo "${{ toJSON(github.event) }}"
 
-      - name: Acción divertida: generar ascii-art
-        uses: muesli/asciify-action@v1
-        with:
-          text: "¡Hola WSK8896!"
+      - name: Acción divertida: imprimir mensaje en ASCII
+        run: |
+          echo "
+          ███████╗██╗    ██╗███████╗██╗  ██╗
+          ██╔════╝██║    ██║██╔════╝██║ ██╔╝
+          █████╗  ██║ █╗ ██║█████╗  █████╔╝ 
+          ██╔══╝  ██║███╗██║██╔══╝  ██╔═██╗ 
+          ███████╗╚███╔███╔╝███████╗██║  ██╗
+          ╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝"
