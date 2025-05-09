@@ -11,20 +11,16 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - name: Mostrar evento recibido
+      - name: Mostrar información del evento
         run: |
           echo "🔔 Evento: ${{ github.event_name }}"
           echo "📌 Repositorio: ${{ github.repository }}"
           echo "🧑 Usuario: ${{ github.actor }}"
-          echo "📄 Detalle del evento:"
-          echo "${{ toJSON(github.event) }}"
+          echo "📄 Detalles del evento:"
+          echo '${{ toJSON(github.event) }}'
 
-      - name: Acción divertida: imprimir mensaje en ASCII
+      - name: Imprimir arte ASCII
         run: |
-          echo "
-          ███████╗██╗    ██╗███████╗██╗  ██╗
-          ██╔════╝██║    ██║██╔════╝██║ ██╔╝
-          █████╗  ██║ █╗ ██║█████╗  █████╔╝ 
-          ██╔══╝  ██║███╗██║██╔══╝  ██╔═██╗ 
-          ███████╗╚███╔███╔╝███████╗██║  ██╗
-          ╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝  ╚═╝"
+          echo "╔════════════════════════╗"
+          echo "║  ¡Hola desde WSK8896!  ║"
+          echo "╚════════════════════════╝"
